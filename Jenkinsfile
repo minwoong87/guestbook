@@ -80,7 +80,7 @@ pipeline {
         stage('Docker Image Build') {
             agent { label 'agent2' }
             steps {
-                echo "Building Docker image with tag ${TODAY}_${BUILD_ID}"
+                //echo "Building Docker image with tag ${TODAY}_${BUILD_ID}"
                 script {
                     // oDockImage = docker.build(strDockerImage)
                     oDockImage = docker.build(strDockerImage, "--build-arg VERSION=${strDockerTag} -f Dockerfile .")
